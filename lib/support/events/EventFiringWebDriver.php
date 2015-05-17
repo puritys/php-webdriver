@@ -26,7 +26,7 @@ class EventFiringWebDriver implements WebDriver, JavaScriptExecutor {
   protected $dispatcher;
 
   /**
-   * @param WebDriver           $webdriver
+   * @param WebDriver $driver
    * @param WebDriverDispatcher $dispatcher
    */
   public function __construct(WebDriver $driver,
@@ -336,21 +336,16 @@ class EventFiringWebDriver implements WebDriver, JavaScriptExecutor {
     }
   }
 
-  /**
-   * Get the element on the page that currently has focus.
-   *
-   * @return WebDriverElement
-   */
-  public function getActiveElement() {
-    try {
-      return $this->driver->getActiveElement();
-    } catch (WebDriverException $exception) {
-      $this->dispatchOnException($exception);
-    }
-  }
-
   private function dispatchOnException($exception) {
     $this->dispatch('onException', $exception, $this);
     throw $exception;
+  }
+
+  public function execute($name, $params) {
+    try {
+      return $this->driver->execute($name, $params);
+    } catch (WebDriverException $exception) {
+      $this->dispatchOnException($exception);
+    }
   }
 }

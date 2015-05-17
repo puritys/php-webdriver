@@ -17,7 +17,7 @@ abstract class WebDriverSingleKeyAction
     extends WebDriverKeysRelatedAction
     implements WebDriverAction {
 
-  private $keys;
+  protected $key;
 
   public function __construct(
       WebDriverKeyboard $keyboard,
@@ -27,9 +27,4 @@ abstract class WebDriverSingleKeyAction
     parent::__construct($keyboard, $mouse, $location_provider);
     $this->key = $key;
   }
-
-  /**
-   * @return void
-   */
-  abstract public function perform();
 }

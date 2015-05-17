@@ -22,10 +22,17 @@ require_once('WebDriverCommandExecutor.php');
 require_once('WebDriverAction.php');
 require_once('WebDriverEventListener.php');
 require_once('remote/FileDetector.php');
+require_once('WebDriverCapabilities.php');
+require_once('remote/ExecuteMethod.php');
+require_once('WebDriverTargetLocator.php');
 
 // abstract class
 require_once('interactions/internal/WebDriverKeysRelatedAction.php');
 require_once('interactions/internal/WebDriverSingleKeyAction.php');
+
+require_once('remote/WebDriverCommand.php');
+
+require_once('net/URLChecker.php');
 
 // class
 require_once('WebDriverAlert.php');
@@ -39,9 +46,9 @@ require_once('WebDriverNavigation.php');
 require_once('WebDriverMouse.php');
 require_once('WebDriverKeyboard.php');
 require_once('WebDriverOptions.php');
+require_once('WebDriverPlatform.php');
 require_once('WebDriverPoint.php');
 require_once('WebDriverSelect.php');
-require_once('WebDriverTargetLocator.php');
 require_once('WebDriverTimeouts.php');
 require_once('WebDriverWait.php');
 require_once('WebDriverWindow.php');
@@ -57,15 +64,32 @@ require_once('interactions/internal/WebDriverDoubleClickAction.php');
 require_once('interactions/internal/WebDriverMouseMoveAction.php');
 require_once('interactions/internal/WebDriverMoveToOffsetAction.php');
 require_once('internal/WebDriverLocatable.php');
+require_once('chrome/ChromeOptions.php');
+require_once('firefox/FirefoxDriver.php');
+require_once('firefox/FirefoxProfile.php');
+require_once('remote/DriverCommand.php');
 require_once('remote/LocalFileDetector.php');
 require_once('remote/UselessFileDetector.php');
 require_once('remote/RemoteMouse.php');
 require_once('remote/RemoteKeyboard.php');
+
+require_once('remote/service/DriverService.php');
+require_once('chrome/ChromeDriverService.php');
+
 require_once('remote/RemoteWebDriver.php');
+require_once('chrome/ChromeDriver.php');
+
 require_once('remote/RemoteWebElement.php');
+require_once('remote/RemoteExecuteMethod.php');
 require_once('remote/WebDriverBrowserType.php');
 require_once('remote/WebDriverCapabilityType.php');
+require_once('remote/DesiredCapabilities.php');
+require_once('remote/WebDriverResponse.php');
+require_once('remote/RemoteTargetLocator.php');
+
 require_once('remote/HttpCommandExecutor.php');
+require_once('remote/service/DriverCommandExecutor.php');
+
 require_once('interactions/internal/WebDriverSendKeysAction.php');
 require_once('interactions/internal/WebDriverKeyDownAction.php');
 require_once('interactions/internal/WebDriverKeyUpAction.php');
